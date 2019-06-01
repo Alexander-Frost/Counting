@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     // MARK: - Outlets
     
+    @IBOutlet var countBarBtnItem: UIBarButtonItem!
     @IBOutlet var countLbl: UILabel!
     @IBOutlet var myBtn: UIButton!
     
@@ -25,6 +26,8 @@ class ViewController: UIViewController {
             
             //uncomment to test on UIButton
 //            self.animateCountdownIteration(duration: 0.09, onLabel: self.myBtn, value: 100)
+            
+            
         }
     }
     
@@ -86,5 +89,10 @@ extension UILabel {
             })
         }
     }
-    
+}
+
+extension UIButton {
+    func toBarButtonItem() -> UIBarButtonItem? {
+        return UIBarButtonItem(customView: self)
+    }
 }
